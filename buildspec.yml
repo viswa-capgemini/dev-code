@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Use Node.js 18 or higher for Vite
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building Vite React app...
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed. Preparing artifacts...
+
+artifacts:
+  files:
+    - '**/*'
