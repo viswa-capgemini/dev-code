@@ -74,6 +74,7 @@ function App() {
 
   return (
     <div>
+    <h1>Measurement Tool</h1>
       <button onClick={handleAddObject}>Add Object</button>
       <Stage width={800} height={600} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
         <Layer>
