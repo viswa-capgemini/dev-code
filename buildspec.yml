@@ -3,18 +3,25 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18 # Use Node.js 18 or higher for Vite
+      nodejs: 20
     commands:
       - echo Installing dependencies...
       - npm install
+      - chmod +x ./node_modules/.bin/*
+  
   build:
     commands:
       - echo Building Vite React app...
       - npm run build
+  
   post_build:
     commands:
       - echo Build completed. Preparing artifacts...
+      # Verify the dist directory was created
+      - ls -la
 
 artifacts:
   files:
     - '**/*'
+  base-directory: 'dist'  # This will be created by Vite during build
+  discard-paths: no
